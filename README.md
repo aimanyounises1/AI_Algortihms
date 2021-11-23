@@ -1,5 +1,5 @@
 # AI_Algortihms
-In this repository you will find implementation of two famous algoritms in AI field.
+In this repository you will find implementation of two algoritms in AI field in Java.
 Please make sure that you run this repo on a good input and stand for the requirments.
 
 ## Bayes Ball's algorithm
