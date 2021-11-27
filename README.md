@@ -15,7 +15,7 @@ The algorithm checks whether two nodes are independent or not.
 1. local CPTs instantiated by evidence.
 2. If an instantiated CPT becomes one-valued, discard the factor.
 * While there are still hidden variables (not Q or evidence):
-1. Pick a hidden variable H
-2. Join all factors mentioning H
-3. Eliminate (sum out) H
-4. If the factor becomes one-valued, discard the factor
+  * Pick a hidden variable H
+  * Join all factors mentioning H
+  *  Eliminate (sum out) H
+  *   If the factor becomes one-valued, discard the factor
