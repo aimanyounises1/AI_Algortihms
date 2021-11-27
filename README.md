@@ -22,4 +22,4 @@ The algorithm checks whether two nodes are independent or not.
   *   If the factor becomes one-valued, discard the factor
 * Join all remaining factors and normalize
 ## E.g
-![](https://github.com/aimanyounises1/AI_Algortihms/blob/master/Variable_Elimination.png | width=100)
+![](https://github.com/aimanyounises1/AI_Algortihms/blob/master/Variable_Elimination.png = 100x100)
