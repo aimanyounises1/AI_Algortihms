@@ -11,3 +11,6 @@ The algorithm checks whether two nodes are independent or not.
 * if there exits path between those two nodes then they aren't independent.
 #### in case we have evidence variables
 ### Steps:
+* Start with initial factors
+− local CPTs instantiated by evidence
+− If an instantiated CPT becomes one-valued, discard the factor
