@@ -8,7 +8,7 @@ The algorithm checks whether two nodes are independent or not.
 ### Steps:
 * check if there is a path between two nodes.
 * path can be represented by common cause connection or causal chain
-* if there exits path between those two nodes then they aren't independent.
+* if there exits path between those two nodes then they are no possible independent.
 #### in case we have evidence variables
 ![](https://github.com/aimanyounises1/AI_Algortihms/blob/master/Bayes_Ball.png)
 ### Steps:
