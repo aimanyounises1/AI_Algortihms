@@ -19,3 +19,4 @@ The algorithm checks whether two nodes are independent or not.
   * Join all factors mentioning H
   *  Eliminate (sum out) H
   *   If the factor becomes one-valued, discard the factor
+* Join all remaining factors and normalize
