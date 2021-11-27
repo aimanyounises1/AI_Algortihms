@@ -10,6 +10,7 @@ The algorithm checks whether two nodes are independent or not.
 * path can be represented by common cause connection or causal chain
 * if there exits path between those two nodes then they aren't independent.
 #### in case we have evidence variables
+![](https://github.com/aimanyounises1/AI_Algortihms/blob/master/Bayes_Ball.png)
 ### Steps:
 1. Start with initial factors
 2. local CPTs instantiated by evidence.
@@ -20,3 +21,5 @@ The algorithm checks whether two nodes are independent or not.
   *  Eliminate (sum out) H
   *   If the factor becomes one-valued, discard the factor
 * Join all remaining factors and normalize
+## E.g
+![](https://github.com/aimanyounises1/AI_Algortihms/blob/master/Variable_Elimination.png)
