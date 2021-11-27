@@ -264,10 +264,7 @@ public class Factor  {
         vars_a = this.remove_duplicates(vars_a);
         for (int  i = 1 ; i < a.fac_values.length; i++){
             String row_name_a = Arrays.toString(a.fac_values[i]);
-            row_name_a = row_name_a.replace("[", "")
-                    .replace("]", "")
-                    .replace(",", "")
-                    .replace(" ", "");
+            row_name_a = replace_str(row_name_a);
             StringBuilder inter = new StringBuilder();
             for (String str : vars_a){
                 int index = a.indexes.get(str);
@@ -275,11 +272,7 @@ public class Factor  {
             }
             for (int j = 1 ; j < b.fac_values.length ; j++){
                 String row_name_b = Arrays.toString(b.fac_values[j]);
-                row_name_b = row_name_b.
-                        replace("[","")
-                        .replace("]","")
-                        .replace("," , "")
-                        .replace(" ","");
+                row_name_b = replace_str(row_name_b);
 
                 StringBuilder intersect = new StringBuilder();
                 for (String str : vars_a){
