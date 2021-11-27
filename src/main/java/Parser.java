@@ -7,13 +7,16 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-
-
+import java.util.HashMap;
+import java.util.Map;
 public class Parser {
-    private ArrayList<NodeN> net;
+    private final ArrayList<NodeN> net;
+    private final Map<String , NodeN> map;
+    private NodeN n = new NodeN();
      public Parser(String name){
          DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-         this.net = new ArrayList<NodeN>();
+         this.net = new ArrayList<>();
+         this.map = new HashMap<>();
          try (InputStream is = readXmlFileIntoInputStream(name)) {
 
              // parse XML file
@@ -30,29 +33,11 @@ public class Parser {
          } catch (ParserConfigurationException | SAXException | IOException e) {
              e.printStackTrace();
          }
-         for (int i  = 0 ; i < net.size() ; i++){
-             for(int j = 0 ; j < net.get(i).getParents().size() ; j++){
-              //   System.out.println(net.get(i).getParents().get(j).getName());
-             }
-         }
 
      }
-   private NodeN n = new NodeN();
 
     public ArrayList<NodeN> getNet() {
         return net;
-    }
-
-    public void setNet(ArrayList<NodeN> net) {
-        this.net = net;
-    }
-
-    public NodeN getN() {
-        return n;
-    }
-
-    public void setN(NodeN n) {
-        this.n = n;
     }
 
     private void printNote(NodeList nodeList) {
@@ -66,10 +51,15 @@ public class Parser {
                 if(tempNode.getNodeName().equals("FOR")){
                      n = new NodeN(tempNode.getTextContent());
                     net.add(n);
+                    this.map.put(n.getName() , n);
                 }
                 if (tempNode.getNodeName().equals("GIVEN")){
                     NodeN sib = new NodeN(tempNode.getTextContent());
                     n.add_sibling(sib);
+                    if (this.map.get(sib.getName())!=null){
+                        NodeN nodeN = this.map.get(sib.getName());
+                        nodeN.add_children(n);
+                    }
 
                 }
                 if (tempNode.getNodeName().equals("TABLE")){
@@ -91,7 +81,5 @@ public class Parser {
     private InputStream readXmlFileIntoInputStream(String fileName) {
         return Parser.class.getClassLoader().getResourceAsStream(fileName);
     }
-    public static void main(String[] args) {
-        Parser p = new Parser("alarm_net.xml");
-    }
+
 }
